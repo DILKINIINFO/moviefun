@@ -4,6 +4,6 @@
     @endauth
 
     @guest
-       <h1> Gust<h1>
+       <h1> Guest<h1>
     @endguest
 </x-layout>
