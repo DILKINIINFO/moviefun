@@ -28,6 +28,36 @@ class AuthController extends Controller
 
     //Login user
     public function login(Request $request){
-        dd('ok');
+         //validate  
+     $feilds=$request->validate([
+        
+        'email'=>['required','max:255','email'],
+        'password'=>['required']
+     ]);
+
+     //try to login
+     if(Auth::attempt($feilds,$request->remember))
+     {
+      return redirect()->intended('dashboard');
+     }else{
+      return back()->withErrors([
+         'failed'=> 'The provided credentials do not
+         match our records.'
+      ]);
+     }
+
     }
+    //Logout
+    public function logout(Request $request){
+      Auth::logout();
+
+      $request->session()->invalidate();
+      $request->session()->regenerateToken();
+      return redirect('/');
+    }
+
+    
+  
+
+
 }
