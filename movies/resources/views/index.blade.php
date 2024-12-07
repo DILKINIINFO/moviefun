@@ -1,9 +1,4 @@
 <x-layout>
-    @auth
-    <h1>Logged in</h1>
-    @endauth
+    <h1 class="title">Latest Posts</h1>
 
-    @guest
-       <h1> Guest<h1>
-    @endguest
 </x-layout>
