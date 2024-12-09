@@ -1,6 +1,7 @@
 <x-layout>
   <h1 class="title">Welcome Back</h1>
   <div class="mx-auto max-w-screen-sm card">
+   
     <form action="{{route('login')}}" method="POST">
       @csrf
      
@@ -27,7 +28,7 @@
       @enderror
       </div>
       <div class="mb-4">
-        <input type="checkbox" name="remember" id="remember"><label for="remember">Remember me</label>
+        <label for="remember">  <input type="checkbox" name="remember" id="remember">Remember me</label>
       </div>
       @error('failed')
       <p class="error">{{$message}}</p>
@@ -37,5 +38,6 @@
       {{--Submit--}}
       <button class="btn" >Login</button>
     </form>
-  </div>
+    </div>
+  
 </x-layout>

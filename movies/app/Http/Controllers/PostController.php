@@ -6,6 +6,7 @@ use App\Models\Post;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
 
+
 class PostController extends Controller
 {
     /**
@@ -13,7 +14,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('index');
+        $posts=Post::latest()->get();
+
+        return view('index' ,['posts'=>$posts]);
     }
 
     /**

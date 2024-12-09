@@ -22,9 +22,10 @@
     <button @click="open = !open" type="button" class="profile-btn">
       <img src="https://picsum.photos/200" alt="">
     </button>
+    
     {{--Drop down menu--}}
     <div  x-show ="open" @click.outside="open=false" class=" bg-white shadow-lg absolute
-    top-10 right-0 rounded-lg overflow-hidden
+    top-10 right-0  rounded-lg overflow-hidden
     font-light">
     <p class="name">{{auth()->user()->name}}</p>
     <a href="{{route('dashboard')}}" class="block hover:big-slate-100 pl-4 pr-8 py-2 mb-1">Dashboard</a>

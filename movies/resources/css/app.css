@@ -42,7 +42,7 @@
         @apply text-slate-200 hover:bg-purple-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium;
     }
     .title {
-        @apply my-6 text-center text-3xl font-bold leading-9 text-slate-900;
+        @apply my-6  text-3xl font-bold leading-9 text-slate-900;
     }
     .error {
         @apply text-sm text-red-600 mt-1;
@@ -71,4 +71,9 @@
     .btn {
         @apply bg-purple-900 block w-full rounded-md border-0 p-2;
     }
+    .card {
+        @apply bg-white p-6 rounded-lg shadow-lg  border-slate-200;
+    }
+   
+    
 }
