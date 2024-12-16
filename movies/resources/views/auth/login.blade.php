@@ -1,43 +1,52 @@
 <x-layout>
-  <h1 class="title">Welcome Back</h1>
-  <div class="mx-auto max-w-screen-sm card">
-   
-    <form action="{{route('login')}}" method="POST">
-      @csrf
-     
+    <h1 class="title">Login to your account</h1>
 
-      {{--email--}}
-      <div class="mb-4">
-        <lable for="email">Email</lable>
-        <input type="text" name="email" value ="{{ old('email')}}"class="input">
+    {{-- Session Messages --}}
+    @if (session('status'))
+        <x-flashMsg msg="{{ session('status') }}" />
+    @endif
+    
+    <div class="mx-auto max-w-screen-sm card">
+        <form action="{{ route('login') }}" method="post">
+            @csrf
 
-        @error('email')
-      <p class="error">{{$message}}</p>
-          
-      @enderror
-      </div>
-  
-      
-      {{--Password--}}
-      <div class="mb-4">
-        <lable for="password">Password</lable>
-        <input type="password" name="password" class="input">
-        @error('password')
-      <p class="error">{{$message}}</p>
-          
-      @enderror
-      </div>
-      <div class="mb-4">
-        <label for="remember">  <input type="checkbox" name="remember" id="remember">Remember me</label>
-      </div>
-      @error('failed')
-      <p class="error">{{$message}}</p>
-          
-      @enderror
-      
-      {{--Submit--}}
-      <button class="btn" >Login</button>
-    </form>
+            {{-- Email --}}
+            <div class="mb-4">
+                <label for="email">Email</label>
+                <input type="text" name="email" value="{{ old('email') }}"
+                    class="input @error('email') ring-red-500 @enderror">
+
+                @error('email')
+                    <p class="error">{{ $message }}</p>
+                @enderror
+            </div>
+
+            {{-- Password --}}
+            <div class="mb-4">
+                <label for="password">Password</label>
+                <input type="password" name="password" class="input @error('password') ring-red-500 @enderror">
+
+                @error('password')
+                    <p class="error">{{ $message }}</p>
+                @enderror
+            </div>
+
+            {{-- Remember checkbox --}}
+            <div class="mb-4 flex justify-between items-center">
+                <div>
+                    <input type="checkbox" name="remember" id="remember">
+                <label for="remember">Remember me</label>
+                </div>
+                
+                <a class="text-blue-500" href="{{route('password.request')}}">Forgot your password?</a>
+            </div>
+
+            @error('failed')
+                <p class="error">{{ $message }}</p>
+            @enderror
+
+            {{-- Submit Button --}}
+            <button class="btn">Login</button>
+        </form>
     </div>
-  
 </x-layout>
