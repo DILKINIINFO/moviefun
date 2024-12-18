@@ -38,7 +38,7 @@
                 <label for="remember">Remember me</label>
                 </div>
                 
-                <a class="text-blue-500" href="{{route('password.request')}}">Forgot your password?</a>
+                
             </div>
 
             @error('failed')

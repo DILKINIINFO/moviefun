@@ -32,7 +32,7 @@
 
           {{-- Current cover photo if exists --}}
           @if ($post->image)
-              <div class="h-auto rounded-md mb-4 w-1/6 overflow-hidden">
+              <div class="h-auto rounded-md mb-4 w-190 h-265 overflow-hidden">
                   <label>Current cover photo</label>
                   <img class="object-cover object-center rounded-md" src="{{ asset('storage/' . $post->image) }}" alt="">
               </div>
