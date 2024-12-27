@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Events\UserSubscribed;
+
 use App\Models\Post;
 use Illuminate\Contracts\Cache\Store;
 use Illuminate\Http\Request;

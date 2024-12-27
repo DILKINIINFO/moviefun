@@ -3,7 +3,6 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostController;
-use App\Http\Controllers\ResetPasswordController;
 use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', 'posts');
